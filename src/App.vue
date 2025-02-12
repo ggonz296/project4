@@ -23,6 +23,14 @@
       cart.value.splice(x, 1) // Remove game if already in cart
   }
 }
+
+//This will compute the price total/sum 
+const totalPrice = computed(() =>{
+  return cart.value
+  .reduce((total, game) => {
+    return total+game.price
+  }, 0)
+})
 </script>
 
 <template>
