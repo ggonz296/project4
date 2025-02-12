@@ -38,5 +38,5 @@ const totalPrice = computed(() =>{
   <Header></Header>
   <AddGames :games="myGames" :cart="cart" @select-game="selectGame"></AddGames>
   <TotalGames :total="totalPrice"></TotalGames>
-  <PurchaseGames></PurchaseGames>
+  <PurchaseGames :cart="cart"></PurchaseGames>
 </template>
