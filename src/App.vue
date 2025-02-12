@@ -18,6 +18,6 @@
 
 <template>
   <Header></Header>
-  <AddGames></AddGames>
+  <AddGames :games="myGames" :cart="cart" @select-game="selectGame"></AddGames>
   <TotalGames :total="totalPrice"></TotalGames>
 </template>
