@@ -23,7 +23,7 @@ const selectGame = (game) => {
         <!--The selectGame function is called when
         the button is clicked and displays the 
         appropriate message on the button-->
-        <button @click="selectGame(game)"> 
+        <button @click="selectGame(x)"> 
             {{ isInCart(x) ? "Remove Game" : "Add Game"}}
         </button>
     </div>

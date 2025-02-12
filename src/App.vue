@@ -14,6 +14,15 @@
   //My array of items in a cart
   const cart = ref([])
 
+  //This will add or remove games from cart
+  const selectGame = (game) => {
+    const x = cart.value.findIndex(item => item.id === game.id)
+    if (x === -1) {
+      cart.value.push(game) // Add game if not in cart
+    } else {
+      cart.value.splice(x, 1) // Remove game if already in cart
+  }
+}
 </script>
 
 <template>
