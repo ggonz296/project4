@@ -2,6 +2,7 @@
   import Header from './components/Header.vue';
   import TotalGames from './components/TotalGames.vue';
   import AddGames from './components/AddGames.vue';
+  import PurchaseGames from './components/PurchaseGames.vue';
   import {ref, computed} from 'vue'
 
   //My array of games - These are pre-initalized
@@ -37,4 +38,5 @@ const totalPrice = computed(() =>{
   <Header></Header>
   <AddGames :games="myGames" :cart="cart" @select-game="selectGame"></AddGames>
   <TotalGames :total="totalPrice"></TotalGames>
+  <PurchaseGames></PurchaseGames>
 </template>
