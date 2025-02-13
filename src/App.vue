@@ -19,10 +19,12 @@
   const selectGame = (game) => {
     const x = cart.value.findIndex(item => item.id === game.id)
     if (x === -1) {
-      cart.value.push(game) // Add game if not in cart
+      //Add game if not in cart
+      cart.value.push(game) 
     } else {
-      cart.value.splice(x, 1) // Remove game if already in cart
-  }
+      //Remove Game from cart
+      cart.value.splice(x, 1)
+    }
 }
 
 //This will compute the price total/sum 
@@ -32,11 +34,16 @@ const totalPrice = computed(() =>{
     return total+game.price
   }, 0)
 })
+
+//This will clear the cart after purchase
+const confirmPurchase = () =>{
+  cart.value = [];
+}
 </script>
 
 <template>
   <Header></Header>
   <AddGames :games="myGames" :cart="cart" @select-game="selectGame"></AddGames>
   <TotalGames :total="totalPrice"></TotalGames>
-  <PurchaseGames :cart="cart"></PurchaseGames>
+  <PurchaseGames :cart="cart" @confirmPurchase="confirmPurchase"></PurchaseGames>
 </template>

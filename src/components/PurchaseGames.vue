@@ -1,18 +1,32 @@
 <script setup>
-    import { ref, defineProps} from 'vue';
+    import {defineProps, defineEmits} from 'vue'
 
-    const props = defineProps(['cart']);
+    //Will pass the cart array into this file
+    const props = defineProps({
+        cart: Array,
+    })
 
-    const userMoney = ref('')
+    //Creating event to confirm purchase
+    const emit = defineEmits(['confirmPurchase'])
+
+    const confirmPurchase = () =>{
+        emit('confirmPurchase')
+        alert("Thank you!")
+    }
 </script>
 
 <template>
-    <form @submit.prevent="confirmPurchase">
-        <label>Enter Amount</label>
-        <input type="number" v-model="userMoney" placeholder="Enter Amount">
-        <button type="submit">Confirm Purchase</button>
-    </form>
     
+    <button @click="confirmPurchase">Confirm Purchase</button>
+    
+    <div>
+        <h2>Purchase Games: In Cart</h2>
+        <ul>
+            <li v-for="x in cart" :key="x.id">
+                {{ x.title }} - ${{ x.price }}
+            </li>
+        </ul>
+    </div>
     
 
 </template>

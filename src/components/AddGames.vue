@@ -1,8 +1,11 @@
 <script setup>
-import { defineProps, defineEmits} from 'vue';
+import { defineProps, defineEmits} from 'vue'
 
-const props = defineProps(['games', 'cart']);
-const emit = defineEmits(['select-game']);
+const props = defineProps({
+    cart: Array,
+    games: Array,
+})
+const emit = defineEmits(['select-game'])
 
 //This checks whether the game is selected or not
 const isInCart = (game) => {
@@ -10,7 +13,7 @@ const isInCart = (game) => {
 }
 // Function to emit event when button is clicked
 const selectGame = (game) => {
-    emit('select-game', game);
+    emit('select-game', game)
 }
 </script>
 
