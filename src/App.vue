@@ -10,6 +10,9 @@
     {id: 1, title: "Older Rings", price: 60},
     {id: 2, title: "Monsters", price: 40},
     {id: 3, title: "DC Rivals", price: 50},
+    {id: 4, title: "Cyber-Bully", price: 70},
+    {id: 5, title: "Star Wars", price: 70},
+    {id: 6, title: "League Of Heros", price: 0},
   ])
 
   //My array of items in a cart
